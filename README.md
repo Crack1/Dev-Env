@@ -20,3 +20,31 @@ npm start -s /*eliminate noice*/
 
 
 we can use ---> debugger to pause and check the application
+
+ git reset ///revert git add .
+
+
+Unit Testing Decisions
+1- framework (mocha)
+2- assertion Library (chai)
+3- Helpers Libraries (jsdom)
+4- Where to run test (node)
+5- Where to place test (alongside)
+6- When to run test (upon save)
+
+
+Continuos Integration: 
+    Why?
+        Forgot to commit new file
+        Forgot to update package.js
+        Commit doesn'run cross-platform
+        Node version conflicts
+        Bad merge
+        Didn't run test 
+    
+    What Does a CI server Do?
+        Run Automated build
+        Run your test 
+        Check code coverage
+        Automate deployment
+
