@@ -1,17 +1,15 @@
 const express = require('express')
 const path = require('path')
 const open = require('open')
-import webpack from 'webpack'
-import config from '../webpack.config.dev'
-const webpackDevMiddleware = require('webpack-dev-middleware')
+const compression = require('compression')
 
 const port = process.env.PORT || 3000
 var app = express()
 
-app.use(webpackDevMiddleware(webpack(config)))
-
+app.use(compression())
+app.use(express.static('dist'))
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../src/index.html'))
+  res.sendFile(path.join(__dirname, '../dist/index.html'))
 })
 
 app.get('/users', function (req, res) {
